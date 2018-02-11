@@ -28,7 +28,7 @@ def expsum_main():
     generateimage(date, mode)
 
     image_file_name = date + '.png'
-    return render_template('imageframe.html', imagefile=image_file_name)
+    return render_template('imageframe.html', imagefile=image_file_name, mode=mode)
 
 
 def image_exists_in_s3(date):
