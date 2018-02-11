@@ -1,0 +1,27 @@
+
+<!doctype html>
+<html>
+  <head>
+    <title>Image frame</title>
+    <meta http-equiv="Pragma" content="no-cache">
+    <meta http-equiv="Cache-Control" content="no-cache">
+  </head>
+  <body>
+ <form method="get" action="{{ url_for('expsum_main') }}">
+Date: <input type="date" name="date" id=birthday value="1980-06-01" />
+<input type="submit" />
+</form>
+    {% if imagefile %}
+    <h1>Hello {{ imagefile }}!</h1>
+
+    <p>{% if mode=="s3" %}
+      <img src="https://s3-ap-northeast-1.amazonaws.com/expsum/{{imagefile}}">
+      {% else %}
+      <img src="static/{{imagefile}}">
+      {% endif %}
+    </p>
+    {% else %}
+    <h1>Hello World!</h1>
+    {% endif %}
+  </body>
+</html>
