@@ -1,5 +1,6 @@
 /static/*
 .DS_Store
+/*.sublime-*
 # Elastic Beanstalk Files
 .elasticbeanstalk/*
 !.elasticbeanstalk/*.cfg.yml
