@@ -24,7 +24,7 @@ def expsum_main():
 
     date = date[2:] # remove 'centry' information. Date will be like 80-12-01
 
-    mode = "s3"
+    mode = "local"
     generateimage(date, mode)
 
     image_file_name = date + '.png'
