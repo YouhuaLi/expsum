@@ -10,6 +10,7 @@ python 3.x
 ```bash
 git clone https://github.com/YouhuaLi/expsum.git
 cd expsum
+mkdir static
 pip install -r requirements.txt
 python application.py
 ```
