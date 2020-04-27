@@ -14,6 +14,9 @@ application = Flask(__name__)
 # application.config['SECRET_KEY']='development key'
 
 
+def lcm(x, y):
+    from fractions import gcd # or can import gcd from `math` in Python 3
+    return x * y // gcd(x, y)
 
 @application.route('/', methods=['GET'])
 def expsum_main():
@@ -61,7 +64,7 @@ def generateimage(date, mode):
     if year == 0: #when year is 1900 or 2000, we use "100" as year number, instead of "0"
         year = 100
 
-    N = 12000
+    N = lcm(lcm(year, month), day) * 2 + 1
 
     def f(n):
         return n/float(month) + n**2/float(day) + n**3/float(year)
