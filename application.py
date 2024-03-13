@@ -5,7 +5,7 @@ from numpy import array, pi, exp
 import boto3
 import botocore
 import matplotlib
-matplotlib.use('agg', warn=False, force=True)
+matplotlib.use('agg', force=True)
 import matplotlib.pyplot as plt
 
 # EB looks for an 'application' callable by default.
@@ -15,7 +15,7 @@ application = Flask(__name__)
 
 
 def lcm(x, y):
-    from fractions import gcd # or can import gcd from `math` in Python 3
+    from math import gcd # or can import gcd from `math` in Python 3
     return x * y // gcd(x, y)
 
 @application.route('/', methods=['GET'])
